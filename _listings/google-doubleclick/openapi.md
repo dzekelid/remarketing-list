@@ -1,0 +1,257 @@
+---
+swagger: "2.0"
+x-collection-name: Google Doubleclick
+x-complete: 1
+info:
+  title: Google Doubleclick Merged API
+  version: 1.0.0
+schemes:
+- http
+produces:
+- application/json
+consumes:
+- application/json
+paths:
+  /userprofiles/{profileId}/remarketingListShares:
+    patch:
+      summary: Update Remarketing List Shares
+      description: Updates an existing remarketing list share. This method supports
+        patch semantics.
+      operationId: dfareporting.remarketingListShares.patch
+      x-api-path-slug: userprofilesprofileidremarketinglistshares-patch
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      - in: query
+        name: remarketingListId
+        description: Remarketing list ID
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+    put:
+      summary: Update Remarketing List Shares
+      description: Updates an existing remarketing list share.
+      operationId: dfareporting.remarketingListShares.update
+      x-api-path-slug: userprofilesprofileidremarketinglistshares-put
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+  /userprofiles/{profileId}/remarketingListShares/{remarketingListId}:
+    get:
+      summary: Get Remarketing List Shares
+      description: Gets one remarketing list share by remarketing list ID.
+      operationId: dfareporting.remarketingListShares.get
+      x-api-path-slug: userprofilesprofileidremarketinglistsharesremarketinglistid-get
+      parameters:
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      - in: path
+        name: remarketingListId
+        description: Remarketing list ID
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+  /userprofiles/{profileId}/remarketingLists:
+    get:
+      summary: Get Remarketing Lists
+      description: Retrieves a list of remarketing lists, possibly filtered. This
+        method supports paging.
+      operationId: dfareporting.remarketingLists.list
+      x-api-path-slug: userprofilesprofileidremarketinglists-get
+      parameters:
+      - in: query
+        name: active
+        description: Select only active or only inactive remarketing lists
+      - in: query
+        name: advertiserId
+        description: Select only remarketing lists owned by this advertiser
+      - in: query
+        name: floodlightActivityId
+        description: Select only remarketing lists that have this floodlight activity
+          ID
+      - in: query
+        name: maxResults
+        description: Maximum number of results to return
+      - in: query
+        name: name
+        description: Allows searching for objects by name or ID
+      - in: query
+        name: pageToken
+        description: Value of the nextPageToken from the previous result page
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      - in: query
+        name: sortField
+        description: Field by which to sort the list
+      - in: query
+        name: sortOrder
+        description: Order of sorted results, default is ASCENDING
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+    patch:
+      summary: Update Remarketing List
+      description: Updates an existing remarketing list. This method supports patch
+        semantics.
+      operationId: dfareporting.remarketingLists.patch
+      x-api-path-slug: userprofilesprofileidremarketinglists-patch
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/holder'
+      - in: query
+        name: id
+        description: Remarketing list ID
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+    post:
+      summary: Insert Remarketing List
+      description: Inserts a new remarketing list.
+      operationId: dfareporting.remarketingLists.insert
+      x-api-path-slug: userprofilesprofileidremarketinglists-post
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+    put:
+      summary: Update Remarketing List
+      description: Updates an existing remarketing list.
+      operationId: dfareporting.remarketingLists.update
+      x-api-path-slug: userprofilesprofileidremarketinglists-put
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/holder'
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+  /userprofiles/{profileId}/remarketingLists/{id}:
+    get:
+      summary: Get Remarketing List
+      description: Gets one remarketing list by ID.
+      operationId: dfareporting.remarketingLists.get
+      x-api-path-slug: userprofilesprofileidremarketinglistsid-get
+      parameters:
+      - in: path
+        name: id
+        description: Remarketing list ID
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+  /userprofiles/{profileId}/targetableRemarketingLists:
+    get:
+      summary: Get Targetable Remarketing Lists
+      description: Retrieves a list of targetable remarketing lists, possibly filtered.
+        This method supports paging.
+      operationId: dfareporting.targetableRemarketingLists.list
+      x-api-path-slug: userprofilesprofileidtargetableremarketinglists-get
+      parameters:
+      - in: query
+        name: active
+        description: Select only active or only inactive targetable remarketing lists
+      - in: query
+        name: advertiserId
+        description: Select only targetable remarketing lists targetable by these
+          advertisers
+      - in: query
+        name: maxResults
+        description: Maximum number of results to return
+      - in: query
+        name: name
+        description: Allows searching for objects by name or ID
+      - in: query
+        name: pageToken
+        description: Value of the nextPageToken from the previous result page
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      - in: query
+        name: sortField
+        description: Field by which to sort the list
+      - in: query
+        name: sortOrder
+        description: Order of sorted results, default is ASCENDING
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+  /userprofiles/{profileId}/targetableRemarketingLists/{id}:
+    get:
+      summary: Get Targetable Remarketing List
+      description: Gets one remarketing list by ID.
+      operationId: dfareporting.targetableRemarketingLists.get
+      x-api-path-slug: userprofilesprofileidtargetableremarketinglistsid-get
+      parameters:
+      - in: path
+        name: id
+        description: Remarketing list ID
+      - in: path
+        name: profileId
+        description: User profile ID associated with this request
+      responses:
+        200:
+          description: OK
+      tags:
+      - Advertising
+      - Remarketing List
+---
